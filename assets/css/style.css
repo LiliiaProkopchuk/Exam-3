@@ -9,9 +9,19 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: #f7f8f3;
 }
+@media screen and (max-width: 800px) {
+  body .lock {
+    overflow: hidden;
+  }
+}
 .container {
-  width: 60%;
+  width: 62%;
   margin: 0 auto;
+}
+@media screen and (max-width: 1630px) {
+  .container {
+    width: 80%;
+  }
 }
 h2 {
   font-size: 30px;
@@ -30,7 +40,7 @@ h3 {
   width: 65%;
 }
 .br-theme-fontawesome-stars {
-  padding-top: 35px;
+  padding-top: 38px;
   border: none;
   width: 100px;
   margin: 0 auto;
@@ -43,7 +53,7 @@ h3 {
   border: none;
   width: 100px;
 }
-header {
+header.js-header {
   color: #fff;
   position: fixed;
   top: 0;
@@ -54,43 +64,171 @@ header {
   text-transform: uppercase;
   border-bottom: 1px solid #fff;
   font-size: 16px;
+  z-index: 50;
 }
-header .navigation nav ul li {
+header.js-header .header_burger,
+header.js-header .header_menu {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  header.js-header .header_burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 50px;
+    margin-left: 30px;
+    z-index: 100;
+  }
+  header.js-header .header_burger span {
+    position: absolute;
+    background-color: #6e774a;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 29px;
+    transition: all 0.3s ease;
+  }
+  header.js-header .header_burger::before,
+  header.js-header .header_burger::after {
+    content: '';
+    background-color: #6e774a;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  header.js-header .header_burger::before {
+    top: 21px;
+  }
+  header.js-header .header_burger::after {
+    top: 36px;
+  }
+  header.js-header .header_burger.active::before {
+    transform: rotate(45deg);
+    top: 36px;
+  }
+  header.js-header .header_burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 36px;
+  }
+  header.js-header .header_burger.active span {
+    transform: scale(0);
+  }
+  header.js-header .header_menu {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1bd5;
+    padding-top: 50px;
+    overflow: auto;
+    transition: all 0.5s ease;
+  }
+  header.js-header .header_menu.active {
+    top: 0;
+  }
+  header.js-header .header_menu .header_list li {
+    text-align: center;
+    padding: 10px;
+  }
+  header.js-header .header_menu .header_list li a {
+    color: #fff;
+    letter-spacing: 3px;
+    text-decoration: underline;
+  }
+}
+@media screen and (max-width: 800px) {
+  header.js-header .navigation {
+    display: none;
+  }
+}
+header.js-header .navigation nav ul {
+  padding-left: 17px;
+}
+header.js-header .navigation nav ul li {
   display: inline-block;
-  padding-left: 40px;
+  padding-left: 47px;
   padding-top: 35px;
 }
-header .navigation nav ul li:hover {
+@media screen and (max-width: 1000px) {
+  header.js-header .navigation nav ul li {
+    padding-left: 20px;
+  }
+}
+header.js-header .navigation nav ul li:hover {
   text-decoration: line-through;
 }
-header .navigation nav ul li a {
+header.js-header .navigation nav ul li a {
   color: #fff;
   cursor: pointer;
 }
-header .logo {
+header.js-header .logo {
   font-size: 30px;
   padding-top: 20px;
+  margin-left: -40px;
 }
-header .actions ul li {
+@media screen and (max-width: 800px) {
+  header.js-header .logo {
+    margin: 0 auto;
+    padding-top: 8px;
+  }
+}
+@media screen and (max-width: 800px) {
+  header.js-header .actions {
+    display: none;
+  }
+}
+header.js-header .actions ul li {
   display: inline-block;
-  padding: 30px;
-  padding-top: 35px;
+  padding: 30px 36px 25px 36px;
   border-left: 1px solid #fff;
 }
-header .actions ul li:hover {
+@media screen and (max-width: 1000px) {
+  header.js-header .actions ul li {
+    padding: 30px 15px 25px 15px;
+  }
+}
+header.js-header .actions ul li:hover {
   text-decoration: line-through;
+}
+header.js-header.white-bg {
+  background-color: rgba(255, 255, 255, 0.651);
+  color: #6e774a;
+  z-index: 1000;
+}
+header.js-header.white-bg .navigation nav ul li a {
+  color: #6e774a;
 }
 main .intro {
   background-image: url('../images/fon_1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 385px;
-  padding-bottom: 180px;
+  background-position: center;
+  padding-top: 370px;
+  padding-bottom: 130px;
 }
 main .intro .container .contant {
   width: 100%;
   color: #f7f8f3;
-  padding-left: 50%;
+  padding-left: 40%;
+}
+@media screen and (max-width: 1880px) {
+  main .intro .container .contant {
+    padding-left: 35%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  main .intro .container .contant {
+    padding-left: 15%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  main .intro .container .contant {
+    padding-left: 0;
+  }
 }
 main .intro .container .contant span,
 main .intro .container .contant a {
@@ -98,13 +236,49 @@ main .intro .container .contant a {
   text-align: right;
 }
 main .intro .container .contant .slogan {
-  font-size: 55px;
+  font-size: 54px;
   text-transform: uppercase;
-  letter-spacing: 9px;
+  letter-spacing: 14px;
   font-weight: 500;
+  margin-bottom: 13px;
+}
+@media screen and (max-width: 800px) {
+  main .intro .container .contant .slogan {
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+}
+@media screen and (max-width: 800px) {
+  main .intro .container .contant .slogan {
+    font-size: 30px;
+    letter-spacing: 6px;
+    width: 400px;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .intro .container .contant .slogan {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .intro .container .contant .slogan {
+    letter-spacing: 3px;
+  }
 }
 main .intro .container .contant span {
   font-size: 24px;
+  letter-spacing: 6px;
+}
+@media screen and (max-width: 600px) {
+  main .intro .container .contant span {
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .intro .container .contant span {
+    font-size: 18px;
+  }
 }
 main .intro .container .contant .shop {
   width: 270px;
@@ -118,8 +292,14 @@ main .intro .container .contant .shop {
   position: relative;
   text-align: left;
   padding-left: 40px;
-  margin: 60px 0 25px 0;
+  margin: 52px 10px 25px 0;
   margin-left: auto;
+}
+@media screen and (max-width: 600px) {
+  main .intro .container .contant .shop {
+    width: 220px;
+    padding-left: 10px;
+  }
 }
 main .intro .container .contant .shop::before {
   content: '';
@@ -127,7 +307,12 @@ main .intro .container .contant .shop::before {
   width: 45px;
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 40px;
+}
+@media screen and (max-width: 600px) {
+  main .intro .container .contant .shop::before {
+    right: 20px;
+  }
 }
 main .intro .container .contant a {
   font-weight: 300;
@@ -135,9 +320,33 @@ main .intro .container .contant a {
   font-size: 18px;
   cursor: pointer;
 }
+main .intro .container .contant .all {
+  letter-spacing: 6px;
+}
+@media screen and (max-width: 400px) {
+  main .intro .container .contant .all {
+    letter-spacing: 3px;
+  }
+}
+main .intro .scroll {
+  position: relative;
+}
+main .intro .scroll a:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
 main .vertical {
   display: block;
-  padding-right: 60px;
+  padding-right: 50px;
+  margin-top: -33px;
+  letter-spacing: 1.5px;
   font-size: 26px;
   color: #fff;
   font-weight: 500;
@@ -146,33 +355,85 @@ main .vertical {
   transform: rotate(180deg);
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  main .vertical {
+    padding-right: 20px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main .vertical {
+    margin-top: 30px;
+  }
+}
 main .vertical:before {
   content: '';
   position: absolute;
-  top: -130px;
+  top: -81px;
   left: -30px;
   border-bottom: 2px solid #fff;
   transform: rotate(90deg);
   width: 100px;
 }
+@media screen and (max-width: 500px) {
+  main .vertical:before {
+    left: -36px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main .vertical:before {
+    width: 60px;
+    top: -101px;
+    left: -18px;
+  }
+}
 main .about .container {
   width: 50%;
 }
+@media screen and (max-width: 1630px) {
+  main .about .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 900px) {
+  main .about .container {
+    width: 95%;
+  }
+}
 main .about .container .label {
-  width: 70%;
+  width: 72%;
+  max-width: 690px;
   margin: 0 auto;
   border: 15px solid #ced6af;
   border-image: url("../images/border.png") 15 round stretch;
-  padding: 30px 70px;
-  margin-top: 95px;
-  margin-bottom: 115px;
+  padding: 26px 70px;
+  padding-bottom: 23px;
+  margin-top: 100px;
+  margin-bottom: 105px;
+}
+@media screen and (max-width: 650px) {
+  main .about .container .label {
+    padding: 26px;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .about .container .label {
+    width: 90%;
+  }
 }
 main .about .container .label h3 {
   color: #1c1c1b;
   padding: 0;
   text-align: center;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 23px;
+  letter-spacing: 4px;
+}
+@media screen and (max-width: 550px) {
+  main .about .container .label h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
 }
 main .about .container .label img {
   max-width: 100%;
@@ -184,15 +445,43 @@ main .about .container .tabs_list {
 main .about .container .tabs_list li {
   display: inline-block;
 }
+@media screen and (max-width: 370px) {
+  main .about .container .tabs_list li {
+    width: 30%;
+    vertical-align: middle;
+  }
+}
 main .about .container .tabs_list li a {
   text-decoration: none;
   font-size: 30px;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   color: #1c1c1b;
   text-align: center;
   position: relative;
   margin-right: 90px;
   cursor: pointer;
+  display: block;
+  height: 60px;
+}
+@media screen and (max-width: 1880px) {
+  main .about .container .tabs_list li a {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  main .about .container .tabs_list li a {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  main .about .container .tabs_list li a {
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .about .container .tabs_list li a {
+    margin-right: 15px;
+  }
 }
 main .about .container .tabs_list li a.active {
   border-bottom: 2px solid #000;
@@ -202,8 +491,8 @@ main .about .container .tabs_list li a:hover {
 }
 main .about .container .tab_wrapper {
   background-color: #f7f8f3;
-  padding-top: 80px;
-  padding-bottom: 130px;
+  padding-top: 78px;
+  padding-bottom: 100px;
 }
 main .about .container .tab_wrapper .tab {
   display: none;
@@ -214,18 +503,43 @@ main .about .container .tab_wrapper .tab.active {
 main .about .container .tab_wrapper .tab .content {
   display: flex;
 }
+@media screen and (max-width: 1100px) {
+  main .about .container .tab_wrapper .tab .content {
+    flex-direction: column;
+  }
+}
 main .about .container .tab_wrapper .tab .content .text p {
   font-size: 18px;
   color: #6e774a;
-  line-height: 2.5;
-  margin-bottom: 15px;
+  line-height: 2.2;
+  margin-bottom: 47px;
+}
+main .about .container .tab_wrapper .tab .content .text h3 {
+  padding-top: 37px;
+  padding-bottom: 30px;
 }
 main .about .container .tab_wrapper .tab .content .photo {
   position: relative;
-  right: -200px;
+  right: -206px;
+}
+@media screen and (max-width: 1630px) {
+  main .about .container .tab_wrapper .tab .content .photo {
+    right: -100px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  main .about .container .tab_wrapper .tab .content .photo {
+    right: 0;
+    width: min-content;
+    margin: 0 auto;
+  }
 }
 main .about .container .tab_wrapper .tab .content .photo img {
   margin-bottom: 30px;
+}
+main .featuerd_products h2 {
+  letter-spacing: 6px;
+  padding-bottom: 65px;
 }
 main .featuerd_products .bx-wrapper {
   max-width: none;
@@ -245,11 +559,31 @@ main .featuerd_products .bx-controls {
 }
 main .featuerd_products .bx-controls-direction {
   position: absolute;
-  left: 45%;
+  left: 46%;
   right: 45%;
-  bottom: -50px;
+  bottom: -83px;
   padding-top: 50px;
   width: 170px;
+}
+@media screen and (max-width: 1400px) {
+  main .featuerd_products .bx-controls-direction {
+    left: 44%;
+  }
+}
+@media screen and (max-width: 900px) {
+  main .featuerd_products .bx-controls-direction {
+    left: 42%;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .featuerd_products .bx-controls-direction {
+    left: 38%;
+  }
+}
+@media screen and (max-width: 400px) {
+  main .featuerd_products .bx-controls-direction {
+    left: 34%;
+  }
 }
 main .featuerd_products .bx-prev {
   background: url(../images/prev.png) 0 1px no-repeat;
@@ -281,13 +615,27 @@ main .featuerd_products .slider_products div .top {
 main .featuerd_products .slider_products div .top .name {
   border: none;
   text-align: center;
-  padding-top: 15px;
-  padding-bottom: 35px;
+  padding-top: 7px;
+  padding-bottom: 41px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+@media screen and (max-width: 1400px) {
+  main .featuerd_products .slider_products div .top .name {
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  main .featuerd_products .slider_products div .top .name {
+    font-size: 16px;
+  }
 }
 main .featuerd_products .slider_products div .top img {
   margin: 0 auto;
   height: 250px;
   padding-bottom: 40px;
+  height: 290px;
 }
 main .featuerd_products .slider_products div .bottom {
   display: flex;
@@ -301,6 +649,7 @@ main .featuerd_products .slider_products div .bottom .price {
   font-size: 18px;
   line-height: 75px;
   padding-left: 30px;
+  min-width: 130px;
 }
 main .featuerd_products .slider_products div .bottom a {
   display: block;
@@ -314,6 +663,11 @@ main .featuerd_products .slider_products div .bottom a {
   position: relative;
   cursor: pointer;
 }
+@media screen and (max-width: 700px) {
+  main .featuerd_products .slider_products div .bottom a {
+    width: 150px;
+  }
+}
 main .featuerd_products .slider_products div .bottom a:before {
   content: '';
   border-top: 2px solid #fff;
@@ -322,12 +676,17 @@ main .featuerd_products .slider_products div .bottom a:before {
   top: 50%;
   right: 40px;
 }
+@media screen and (max-width: 700px) {
+  main .featuerd_products .slider_products div .bottom a:before {
+    right: 15px;
+  }
+}
 main .frequently_asked_questions {
-  padding-bottom: 140px;
+  padding-bottom: 145px;
 }
 main .frequently_asked_questions .container h2 {
-  padding-top: 140px;
-  padding-bottom: 50px;
+  padding-top: 156px;
+  padding-bottom: 40px;
   color: #1c1c1b;
   letter-spacing: 5px;
 }
@@ -335,10 +694,25 @@ main .frequently_asked_questions .container .accordion {
   width: 50%;
   margin: 0 auto;
 }
+@media screen and (max-width: 1700px) {
+  main .frequently_asked_questions .container .accordion {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  main .frequently_asked_questions .container .accordion {
+    width: 100%;
+  }
+}
 main .frequently_asked_questions .container .accordion li {
   border-top: 2px solid #eaedde;
   font-size: 18px;
   font-weight: 300;
+}
+@media screen and (max-width: 700px) {
+  main .frequently_asked_questions .container .accordion li {
+    font-size: 16px;
+  }
 }
 main .frequently_asked_questions .container .accordion li:last-child {
   border-bottom: 2px solid #eaedde;
@@ -346,22 +720,39 @@ main .frequently_asked_questions .container .accordion li:last-child {
 main .frequently_asked_questions .container .accordion li .accordion_header {
   color: #6e774a;
   cursor: pointer;
-  line-height: 70px;
+  line-height: 74px;
+  letter-spacing: 5px;
+}
+@media screen and (max-width: 700px) {
+  main .frequently_asked_questions .container .accordion li .accordion_header {
+    letter-spacing: 0;
+  }
 }
 main .frequently_asked_questions .container .accordion li .accordion_header::before {
   content: '\02795';
   font-weight: 300;
   float: left;
-  padding-right: 30px;
+  padding-right: 45px;
+}
+@media screen and (max-width: 700px) {
+  main .frequently_asked_questions .container .accordion li .accordion_header::before {
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 390px) {
+  main .frequently_asked_questions .container .accordion li .accordion_header::before {
+    padding-right: 9px;
+  }
 }
 main .frequently_asked_questions .container .accordion li .accordion_header.active::before {
   content: '\02796';
 }
 main .frequently_asked_questions .container .accordion li .accordion_body {
   display: none;
-  line-height: 2;
-  padding-left: 45px;
-  padding-bottom: 30px;
+  line-height: 2.2;
+  padding-left: 60px;
+  padding-bottom: 44px;
+  padding-top: 20px;
 }
 main .testimonials .slider_reviews .slide {
   background-image: url(../images/fon_2.jpg);
@@ -369,11 +760,21 @@ main .testimonials .slider_reviews .slide {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (max-width: 1200px) {
+  main .testimonials .slider_reviews .slide {
+    background-position-x: -620px;
+  }
+}
 main .testimonials .slider_reviews .slide .contant {
   width: 42%;
   margin: 0 auto;
   padding-top: 230px;
   padding-bottom: 53px;
+}
+@media screen and (max-width: 900px) {
+  main .testimonials .slider_reviews .slide .contant {
+    width: 80%;
+  }
 }
 main .testimonials .slider_reviews .slide .contant blockquote {
   font-size: 22px;
@@ -384,6 +785,11 @@ main .testimonials .slider_reviews .slide .contant blockquote {
   padding-top: 14px;
   padding-bottom: 18px;
   line-height: 41px;
+}
+@media screen and (max-width: 600px) {
+  main .testimonials .slider_reviews .slide .contant blockquote {
+    letter-spacing: 2px;
+  }
 }
 main .testimonials .slider_reviews .slide .contant cite {
   font-size: 24px;
@@ -415,6 +821,12 @@ main .testimonials .slider_reviews .slide span {
   text-transform: uppercase;
   writing-mode: tb-rl;
 }
+@media screen and (max-width: 600px) {
+  main .testimonials .slider_reviews .slide span {
+    letter-spacing: 2px;
+    padding-left: 30px;
+  }
+}
 main .testimonials .bx-viewport {
   height: 100% !important;
 }
@@ -422,6 +834,18 @@ main .testimonials .bx-wrapper {
   border: none;
   box-shadow: none;
   margin-bottom: 0 !important;
+}
+@media screen and (max-width: 600px) {
+  main .testimonials .bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    margin-top: 24px;
+  }
+  main .testimonials .bx-wrapper .bx-prev {
+    left: 30px;
+  }
+  main .testimonials .bx-wrapper .bx-next {
+    right: 70px;
+  }
 }
 main .testimonials .bx-controls {
   position: absolute;
@@ -437,6 +861,36 @@ main .testimonials .bx-controls-direction {
   bottom: 105px;
   width: 263px;
 }
+@media screen and (max-width: 1800px) {
+  main .testimonials .bx-controls-direction {
+    left: 41%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  main .testimonials .bx-controls-direction {
+    left: 39%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  main .testimonials .bx-controls-direction {
+    left: 36%;
+  }
+}
+@media screen and (max-width: 800px) {
+  main .testimonials .bx-controls-direction {
+    left: 31%;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .testimonials .bx-controls-direction {
+    left: 27%;
+  }
+}
+@media screen and (max-width: 400px) {
+  main .testimonials .bx-controls-direction {
+    left: 22%;
+  }
+}
 main .testimonials .bx-prev {
   background: url(../images/prev_white.png) 0 0 no-repeat;
   background-position: center;
@@ -449,6 +903,16 @@ main .testimonials .bx-prev {
   text-indent: 999px;
   z-index: 1000;
   padding: 60px;
+}
+@media screen and (max-width: 600px) {
+  main .testimonials .bx-prev {
+    padding: 40px;
+  }
+}
+main .testimonials .bx-prev:hover,
+main .testimonials .bx-prev:focus {
+  background: url(../images/prev_white.png) 0 0 no-repeat;
+  background-position: center;
 }
 main .testimonials .bx-next {
   background: url(../images/next_white.png) 0 0 no-repeat;
@@ -463,8 +927,18 @@ main .testimonials .bx-next {
   z-index: 1000;
   padding: 60px;
 }
+@media screen and (max-width: 600px) {
+  main .testimonials .bx-next {
+    padding: 40px;
+  }
+}
+main .testimonials .bx-next:hover,
+main .testimonials .bx-next:focus {
+  background: url(../images/next_white.png) 0 0 no-repeat;
+  background-position: center;
+}
 footer {
-  padding-top: 160px;
+  padding-top: 155px;
 }
 footer .logo {
   width: 100%;
@@ -472,7 +946,6 @@ footer .logo {
   font-size: 60px;
   color: #6e774a;
   overflow: hidden;
-  font-size: 30px;
 }
 footer .logo::before,
 footer .logo::after {
@@ -495,7 +968,19 @@ footer .logo::after {
 footer .links {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 42px;
+}
+@media screen and (max-width: 700px) {
+  footer .links {
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  footer .links {
+    width: 80%;
+  }
 }
 footer .links .left,
 footer .links .center,
@@ -504,6 +989,14 @@ footer .links .right {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+@media screen and (max-width: 700px) {
+  footer .links .left,
+  footer .links .center,
+  footer .links .right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 footer .links .left ul li a,
 footer .links .center ul li a,
@@ -523,8 +1016,14 @@ footer .links .center::before {
   border-left: 2px solid #6e774a;
   height: 55px;
 }
+@media screen and (max-width: 700px) {
+  footer .links .center::before {
+    display: none;
+  }
+}
 footer .links .center ul li {
   display: inline-block;
+  font-size: 25px;
 }
 footer .links .center ul li:nth-child(2) {
   margin: 0 40px;
@@ -535,7 +1034,8 @@ footer .bottom h4 {
   text-transform: uppercase;
   font-weight: 400;
   padding-bottom: 25px;
-  padding-top: 30px;
+  padding-top: 22px;
+  letter-spacing: 2.6px;
 }
 footer .bottom .email {
   border: 2px solid #ced6af;
@@ -543,7 +1043,12 @@ footer .bottom .email {
   margin: 0 auto;
   width: 80%;
   max-width: 370px;
-  margin-bottom: 60px;
+  margin-bottom: 57px;
+}
+@media screen and (max-width: 500px) {
+  footer .bottom .email {
+    width: 100%;
+  }
 }
 footer .bottom .email input,
 footer .bottom .email button {
@@ -584,7 +1089,7 @@ footer .bottom span {
   text-align: center;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #6e774a;
   display: block;
   margin: 0 auto;

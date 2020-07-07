@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBD health</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.ico" />
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -15,14 +16,28 @@
 </head>
 
 <body>
-    <header>
+    <header class="js-header">
+        <div class="header_burger">
+            <span></span>
+        </div>
+        <nav class="header_menu">
+            <ul class="header_list">
+                <li><a href="#home" class="header_link nav_link">Home</a></li>
+                <li><a href="#products" class="header_link nav_link">Products</a></li>
+                <li><a href="#questions" class="header_link nav_link">FAQs</a></li>
+                <li><a href="#contact" class="header_link nav_link">Contact Us</a></li>
+                <li><a href="#" class="header_link">login</a></li>
+                <li><a href="#" class="header_link"><span class="icon-search"></span> Search</a></li>
+                <li><a href="#" class="header_link">Cart (0)</a></li>
+            </ul>
+        </nav>
         <div class="navigation">
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#home" class="nav_link">Home</a></li>
+                    <li><a href="#products" class="nav_link">Products</a></li>
+                    <li><a href="#questions" class="nav_link">FAQs</a></li>
+                    <li><a href="#contact" class="nav_link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,7 +52,7 @@
     </header>
 
     <main>
-        <div class="intro">
+        <div class="intro" id="home">
             <div class="container">
                 <div class="contant">
                     <span class="slogan">Enhancing Life
@@ -47,13 +62,16 @@
                         Choose Wisely. Choose CBD.
                     </span>
                     <a href="#" class="shop">Start Shopping</a>
-                    <a href="#">See all products &rarr;</a>
+                    <a href="#" class="all">See all products &rarr;</a>
                 </div>
             </div>
             <span class="vertical">CBD Potion health</span>
+            <div class="scroll">
+                <a href="#about" class="nav_link"></a>
+            </div>
         </div>
 
-        <div class="about">
+        <div class="about" id="about">
             <div class="container">
                 <div class="label">
                     <h3>We are what we are</h3>
@@ -81,8 +99,22 @@
                                     system.</p>
                             </div>
                             <div class="photo">
-                                <img src="assets/images/photo_1.jpg" alt="Mountains">
-                                <img src="assets/images/photo_2.jpg" alt="Wheat">
+                                <picture>
+                                    <source srcset="assets/images/photo_1.jpg" type="image/jpg"
+                                        media="(min-width:701px)">
+                                    <source srcset="assets/images/photo_1_300.jpg" type="image/jpg"
+                                        media="(max-width:700px)">
+                                    <img src="assets/images/photo_1.jpg" alt="Mountains">
+                                </picture>
+                                <picture>
+                                    <source srcset="assets/images/photo_2.jpg" type="image/jpg"
+                                        media="(min-width:701px)">
+                                    <source srcset="assets/images/photo_2_300.jpg" type="image/jpg"
+                                        media="(max-width:700px)">
+                                    <img src="assets/images/photo_2.jpg" alt="Wheat">
+                                </picture>
+                                <!--   <img src="assets/images/photo_1.jpg" alt="Mountains">
+                                <img src="assets/images/photo_2.jpg" alt="Wheat">  -->
                             </div>
                         </div>
                     </div>
@@ -128,115 +160,14 @@
             </div>
         </div>
 
-        <div class="featuerd_products">
+        <div class="featuerd_products" id="products">
             <h2>CBD Featured Products</h2>
             <div class="slider_products">
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">CBD 500 mg Orange Flavor Tincture</div>
-                        <img src="assets/images/product_1.png" alt="Bottle">
-                    </div>
-                    <div class="bottom">
-                        <div class="price"><span>$ 49.99 USD</span></div>
-                        <a href="#">Shop</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">Black ICE CBD Muscle Rub 200 mg</div>
-                        <img src="assets/images/product_2.png" alt="Ice">
-                        <div class="bottom">
-                            <div class="price"><span>$ 49.99 USD</span></div>
-                            <a href="#">Shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">CBD+Curcumin Coffee 750 mg</div>
-                        <img src="assets/images/product_3.png" alt="Coffe">
-                        <div class="bottom">
-                            <div class="price"><span>$ 79.99 USD</span></div>
-                            <a href="#">Shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">CBD 500 mg Orange Flavor Tincture</div>
-                        <img src="assets/images/product_1.png" alt="Bottle">
-                    </div>
-                    <div class="bottom">
-                        <div class="price"><span>$ 49.99 USD</span></div>
-                        <a href="#">Shop</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">Black ICE CBD Muscle Rub 200 mg</div>
-                        <img src="assets/images/product_2.png" alt="Ice">
-                        <div class="bottom">
-                            <div class="price"><span>$ 49.99 USD</span></div>
-                            <a href="#">Shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="top">
-                        <select class="example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div class="name">CBD+Curcumin Coffee 750 mg</div>
-                        <img src="assets/images/product_3.png" alt="Coffe">
-                        <div class="bottom">
-                            <div class="price"><span>$ 79.99 USD</span></div>
-                            <a href="#">Shop</a>
-                        </div>
-                    </div>
-                </div>
+                <div id="prod_list"></div>
             </div>
         </div>
 
-        <div class="frequently_asked_questions">
+        <div class="frequently_asked_questions" id="questions">
             <div class="container">
                 <h2>Frequently asked questions</h2>
                 <ul class="accordion" data-accordion="open">
@@ -302,7 +233,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="logo">CBD</div>
             <div class="links">
@@ -344,8 +275,36 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/plugins/jquery.barrating.min.js"></script>
     <script src="assets/plugins/jquery.bxslider.js"></script>
+
     <script>
         $(document).ready(function () {
+            //       MENU
+            let header = $(".js-header");
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {
+                    header.addClass('white-bg');
+                } else {
+                    header.removeClass('white-bg');
+                }
+            });
+
+            $("a.nav_link").click(function () {
+                $("html,body").animate({
+                    scrollTop: $($(this).attr("href")).offset().top
+                }, {
+                    duration: 2000,
+                    aesing: 'swing'
+                });
+                return false;
+            });
+
+            $(".header_burger").click(function (event) {
+                $(".header_burger, .header_menu").toggleClass("active");
+                $("body").toggleClass("lock");
+            });
+
+            //  TABS
             let tab = $('.container .tab_wrapper > div');
             tab.hide().filter(':first').show();
 
@@ -357,19 +316,54 @@
                 return false;
             });
 
-            $('.slider_products').bxSlider({
-                pager: false,
-                controls: true,
-                auto: true,
-                pause: 10000,
-                minSlides: 1,
-                maxSlides: 3,
-                slideMargin: 50,
-                slideWidth: 610,
-                moveSlides: 1,
-                shrinkItems: true
+            //   AJAX + Slider Products
+            $.ajax({
+                url: 'data/products_list.json',
+                type: 'get',
+                dataType: 'json',
+                success: function (products_list) {
+                    let list_html = '',
+                        item;
+                    for (let p in products_list) {
+                        item = products_list[p];
+                        list_html += `                <div>
+                            <div class="top">
+                                <select class="example">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <div class="name">${item.name}</div>
+                                <img src="${item.image}" alt="${item.alt}">
+                                <div class="bottom">
+                                    <div class="price"><span>${item.price}</span></div>
+                                    <a href="#">Shop</a>
+                                </div>
+                            </div>
+                        </div>`;
+                    }
+                    $(list_html).replaceAll("#prod_list");
+                    $('.slider_products').bxSlider({
+                        pager: false,
+                        controls: true,
+                        auto: true,
+                        pause: 10000,
+                        minSlides: 1,
+                        maxSlides: 3,
+                        slideMargin: 50,
+                        slideWidth: 610,
+                        moveSlides: 1,
+                        shrinkItems: true
+                    });
+                },
+                error: function (err) {
+                    alert(No);
+                }
             });
 
+            //    Slider Reviews
             $('.slider_reviews').bxSlider({
                 pager: false,
                 controls: true,
@@ -386,6 +380,7 @@
             });
         });
 
+        //    Accordion
         let accodion = function () {
             let data = $(".accordion").attr("data-accordion");
 
