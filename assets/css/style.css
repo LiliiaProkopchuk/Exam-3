@@ -65,6 +65,7 @@ header .navigation nav ul li:hover {
 }
 header .navigation nav ul li a {
   color: #fff;
+  cursor: pointer;
 }
 header .logo {
   font-size: 30px;
@@ -75,6 +76,9 @@ header .actions ul li {
   padding: 30px;
   padding-top: 35px;
   border-left: 1px solid #fff;
+}
+header .actions ul li:hover {
+  text-decoration: line-through;
 }
 main .intro {
   background-image: url('../images/fon_1.jpg');
@@ -129,6 +133,7 @@ main .intro .container .contant a {
   font-weight: 300;
   color: #f7f8f3;
   font-size: 18px;
+  cursor: pointer;
 }
 main .vertical {
   display: block;
@@ -187,6 +192,7 @@ main .about .container .tabs_list li a {
   text-align: center;
   position: relative;
   margin-right: 90px;
+  cursor: pointer;
 }
 main .about .container .tabs_list li a.active {
   border-bottom: 2px solid #000;
@@ -233,11 +239,9 @@ main .featuerd_products .bx-viewport {
 }
 main .featuerd_products .bx-controls {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 100;
 }
 main .featuerd_products .bx-controls-direction {
   position: absolute;
@@ -254,8 +258,6 @@ main .featuerd_products .bx-prev {
   height: 30px;
   margin: 0 5px;
   overflow: hidden;
-  text-indent: 999px;
-  z-index: 1000;
 }
 main .featuerd_products .bx-next {
   background: url(../images/next.png) no-repeat;
@@ -264,8 +266,6 @@ main .featuerd_products .bx-next {
   height: 30px;
   margin: 0 5px;
   overflow: hidden;
-  text-indent: 999px;
-  z-index: 1000;
 }
 main .featuerd_products .bx-next:hover,
 main .featuerd_products .bx-next:focus {
@@ -312,6 +312,7 @@ main .featuerd_products .slider_products div .bottom a {
   background-color: #6e774a;
   padding-left: 40px;
   position: relative;
+  cursor: pointer;
 }
 main .featuerd_products .slider_products div .bottom a:before {
   content: '';
@@ -424,7 +425,6 @@ main .testimonials .bx-wrapper {
 }
 main .testimonials .bx-controls {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -467,9 +467,30 @@ footer {
   padding-top: 160px;
 }
 footer .logo {
+  width: 100%;
   text-align: center;
   font-size: 60px;
   color: #6e774a;
+  overflow: hidden;
+  font-size: 30px;
+}
+footer .logo::before,
+footer .logo::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 2px;
+  width: 100%;
+  background: #6e774a;
+  position: relative;
+}
+footer .logo::before {
+  margin-left: -100%;
+  left: -15%;
+}
+footer .logo::after {
+  margin-right: -100%;
+  right: -15%;
 }
 footer .links {
   display: flex;
@@ -489,16 +510,32 @@ footer .links .center ul li a,
 footer .links .right ul li a {
   color: #6e774a;
   line-height: 40px;
+  cursor: pointer;
+}
+footer .links .center {
+  position: relative;
+}
+footer .links .center::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px solid #6e774a;
+  height: 55px;
 }
 footer .links .center ul li {
   display: inline-block;
+}
+footer .links .center ul li:nth-child(2) {
+  margin: 0 40px;
 }
 footer .bottom h4 {
   font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 400;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
+  padding-top: 30px;
 }
 footer .bottom .email {
   border: 2px solid #ced6af;

@@ -70,6 +70,7 @@ header{
                     }
                     a{
                         color:#fff;
+                        cursor: pointer;
                     }
                 }
             }
@@ -86,6 +87,9 @@ header{
                 padding: 30px;
                 padding-top: 35px;
                 border-left: 1px solid #fff;
+                &:hover{
+                    text-decoration: line-through;
+                }
             }
         }
     }
@@ -142,6 +146,7 @@ main{
                     font-weight: 300;
                     color: @color_text_1;
                     font-size: 18px;
+                    cursor: pointer;
                 }
             }
         }
@@ -201,6 +206,7 @@ main{
                         text-align: center;
                         position: relative;
                         margin-right: 90px;
+                        cursor: pointer;
                         &.active {
                             border-bottom: 2px solid #000;
                         }
@@ -254,11 +260,9 @@ main{
         }
         .bx-controls{
             position: absolute;
-            top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 100;
         }
         .bx-controls-direction {
             position: absolute;
@@ -275,8 +279,6 @@ main{
             height: 30px;
             margin: 0 5px;
             overflow: hidden;
-            text-indent: 999px; 
-            z-index: 1000;
         }
         .bx-next {
             background: url(../images/next.png) no-repeat;    
@@ -285,8 +287,6 @@ main{
             height: 30px;
             margin: 0 5px;
             overflow: hidden;
-            text-indent: 999px;
-            z-index: 1000;
             &:hover, &:focus{
                 background: url(../images/next.png) 0 0 no-repeat;
             }
@@ -332,6 +332,7 @@ main{
                         background-color: @color_text_3;
                         padding-left: 40px;
                         position: relative;
+                        cursor: pointer;
                         &:before{
                             content: '';
                             border-top: 2px solid #fff;
@@ -454,7 +455,6 @@ main{
         }
         .bx-controls{
             position: absolute;
-            top: 0;
             left: 0;
             right: 0;
             bottom: 0;
@@ -498,9 +498,29 @@ main{
 footer{
     padding-top: 160px;
     .logo{
+        width: 100%;
         text-align: center;
         font-size: 60px;
         color: @color_text_3;
+        overflow: hidden;
+        font-size: 30px;
+        &::before, &::after{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 2px;
+            width: 100%;
+            background: @color_text_3;
+            position: relative;
+        }
+        &::before{
+            margin-left: -100%;
+            left: -15%;
+        }
+        &::after{
+            margin-right: -100%;
+            right: -15%;
+        }
     }
     .links{
         display: flex;
@@ -516,14 +536,27 @@ footer{
                     a{
                         color: @color_text_3;
                         line-height: 40px;
+                        cursor: pointer;
                     }
                 }
             }
         }
         .center{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                border-left: 2px solid @color_text_3;
+                height: 55px;
+            }
             ul{
                 li{
                     display: inline-block;
+                    &:nth-child(2){
+                        margin: 0 40px;
+                    }
                 }
             }
         }
@@ -534,7 +567,8 @@ footer{
             text-align: center;
             text-transform: uppercase;
             font-weight: 400;
-            margin-bottom: 25px;
+            padding-bottom: 25px;
+            padding-top: 30px;
         }
         .email{
             border: 2px solid @color_green;
