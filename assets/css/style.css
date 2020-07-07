@@ -39,19 +39,19 @@ h3 {
   display: block;
   width: 65%;
 }
-.br-theme-fontawesome-stars {
-  padding-top: 38px;
+.br-theme-css-stars {
+  padding-top: 31px;
   border: none;
   width: 100px;
   margin: 0 auto;
 }
-.br-theme-fontawesome-stars .br-widget a.br-active:after,
-.br-theme-fontawesome-stars .br-widget a.br-selected:after {
+.br-theme-css-stars .br-widget a.br-active:after,
+.br-theme-css-stars .br-widget a.br-selected:after {
   color: #6e774a;
 }
 .br-widget {
   border: none;
-  width: 100px;
+  width: 120px;
 }
 header.js-header {
   color: #fff;
@@ -75,7 +75,7 @@ header.js-header .header_menu {
     display: block;
     position: relative;
     width: 30px;
-    height: 50px;
+    height: 0px;
     margin-left: 30px;
     z-index: 100;
   }
@@ -195,7 +195,7 @@ header.js-header .actions ul li:hover {
   text-decoration: line-through;
 }
 header.js-header.white-bg {
-  background-color: rgba(255, 255, 255, 0.651);
+  background-color: rgba(255, 255, 255, 0.932);
   color: #6e774a;
   z-index: 1000;
 }
@@ -314,6 +314,22 @@ main .intro .container .contant .shop::before {
     right: 20px;
   }
 }
+main .intro .container .contant .shop.btn-top {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+main .intro .container .contant .shop.btn-top:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
 main .intro .container .contant a {
   font-weight: 300;
   color: #f7f8f3;
@@ -321,12 +337,20 @@ main .intro .container .contant a {
   cursor: pointer;
 }
 main .intro .container .contant .all {
+  width: max-content;
+  margin-left: auto;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
   letter-spacing: 6px;
 }
 @media screen and (max-width: 400px) {
   main .intro .container .contant .all {
     letter-spacing: 3px;
   }
+}
+main .intro .container .contant .all:hover {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 main .intro .scroll {
   position: relative;
@@ -351,7 +375,7 @@ main .vertical {
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
-  writing-mode: tb-rl;
+  writing-mode: vertical-rl;
   transform: rotate(180deg);
   position: relative;
 }
@@ -580,6 +604,11 @@ main .featuerd_products .bx-controls-direction {
     left: 38%;
   }
 }
+@media screen and (max-width: 500px) {
+  main .featuerd_products .bx-controls-direction {
+    left: 36%;
+  }
+}
 @media screen and (max-width: 400px) {
   main .featuerd_products .bx-controls-direction {
     left: 34%;
@@ -615,7 +644,7 @@ main .featuerd_products .slider_products div .top {
 main .featuerd_products .slider_products div .top .name {
   border: none;
   text-align: center;
-  padding-top: 7px;
+  padding-top: 13px;
   padding-bottom: 41px;
   letter-spacing: 2.7px;
   text-transform: uppercase;
@@ -651,7 +680,7 @@ main .featuerd_products .slider_products div .bottom .price {
   padding-left: 30px;
   min-width: 130px;
 }
-main .featuerd_products .slider_products div .bottom a {
+main .featuerd_products .slider_products div .bottom .hvr-pulse {
   display: block;
   width: 190px;
   line-height: 75px;
@@ -664,11 +693,11 @@ main .featuerd_products .slider_products div .bottom a {
   cursor: pointer;
 }
 @media screen and (max-width: 700px) {
-  main .featuerd_products .slider_products div .bottom a {
+  main .featuerd_products .slider_products div .bottom .hvr-pulse {
     width: 150px;
   }
 }
-main .featuerd_products .slider_products div .bottom a:before {
+main .featuerd_products .slider_products div .bottom .hvr-pulse:before {
   content: '';
   border-top: 2px solid #fff;
   width: 45px;
@@ -677,9 +706,36 @@ main .featuerd_products .slider_products div .bottom a:before {
   right: 40px;
 }
 @media screen and (max-width: 700px) {
-  main .featuerd_products .slider_products div .bottom a:before {
+  main .featuerd_products .slider_products div .bottom .hvr-pulse:before {
     right: 15px;
   }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+main .featuerd_products .slider_products div .bottom .hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+main .featuerd_products .slider_products div .bottom .hvr-pulse:hover,
+main .featuerd_products .slider_products div .bottom .hvr-pulse:focus,
+main .featuerd_products .slider_products div .bottom .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 main .frequently_asked_questions {
   padding-bottom: 145px;
@@ -819,7 +875,7 @@ main .testimonials .slider_reviews .slide span {
   padding-left: 60px;
   padding-bottom: 40px;
   text-transform: uppercase;
-  writing-mode: tb-rl;
+  writing-mode: vertical-rl;
 }
 @media screen and (max-width: 600px) {
   main .testimonials .slider_reviews .slide span {
@@ -864,6 +920,11 @@ main .testimonials .bx-controls-direction {
 @media screen and (max-width: 1800px) {
   main .testimonials .bx-controls-direction {
     left: 41%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  main .testimonials .bx-controls-direction {
+    left: 40%;
   }
 }
 @media screen and (max-width: 1300px) {
@@ -1065,12 +1126,18 @@ footer .bottom .email button {
   float: right;
   cursor: pointer;
 }
+footer .bottom .email button:hover img {
+  float: right;
+}
 footer .bottom .email input {
-  width: 74%;
+  width: 74.9%;
   height: 56px;
   float: left;
   font-size: 14px;
   padding-left: 30px;
+}
+footer .bottom .email input:focus {
+  background-color: #6e774a;
 }
 footer .bottom .email ::-webkit-input-placeholder {
   color: #6e774a;
