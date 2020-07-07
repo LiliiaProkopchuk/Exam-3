@@ -316,17 +316,25 @@
                 return false;
             });
 
-            //   AJAX + Slider Products
-            $.ajax({
-                url: 'data/products_list.json',
-                type: 'get',
-                dataType: 'json',
-                success: function (products_list) {
-                    let list_html = '',
-                        item;
-                    for (let p in products_list) {
-                        item = products_list[p];
-                        list_html += `                <div>
+            //   Stars
+            $(function () {
+                $('.example').barrating({
+                    theme: 'fontawesome-stars'
+                });
+            });
+        });
+
+        //   AJAX + Slider Products
+        $.ajax({
+            url: 'data/products_list.json',
+            type: 'get',
+            dataType: 'json',
+            success: function (products_list) {
+                let list_html = '',
+                    item;
+                for (let p in products_list) {
+                    item = products_list[p];
+                    list_html += `                <div>
                             <div class="top">
                                 <select class="example">
                                     <option value="1">1</option>
@@ -343,41 +351,34 @@
                                 </div>
                             </div>
                         </div>`;
-                    }
-                    $(list_html).replaceAll("#prod_list");
-                    $('.slider_products').bxSlider({
-                        pager: false,
-                        controls: true,
-                        auto: true,
-                        pause: 10000,
-                        minSlides: 1,
-                        maxSlides: 3,
-                        slideMargin: 50,
-                        slideWidth: 610,
-                        moveSlides: 1,
-                        shrinkItems: true
-                    });
-                },
-                error: function (err) {
-                    alert(No);
                 }
-            });
-
-            //    Slider Reviews
-            $('.slider_reviews').bxSlider({
-                pager: false,
-                controls: true,
-                auto: true,
-                pause: 10000,
-                moveSlides: 1,
-                shrinkItems: true
-            });
-
-            $(function () {
-                $('.example').barrating({
-                    theme: 'fontawesome-stars'
+                $(list_html).replaceAll("#prod_list");
+                $('.slider_products').bxSlider({
+                    pager: false,
+                    controls: true,
+                    auto: true,
+                    pause: 10000,
+                    minSlides: 1,
+                    maxSlides: 3,
+                    slideMargin: 50,
+                    slideWidth: 610,
+                    moveSlides: 1,
+                    shrinkItems: true
                 });
-            });
+            },
+            error: function (err) {
+                alert(No);
+            }
+        });
+
+        //    Slider Reviews
+        $('.slider_reviews').bxSlider({
+            pager: false,
+            controls: true,
+            auto: true,
+            pause: 10000,
+            moveSlides: 1,
+            shrinkItems: true
         });
 
         //    Accordion
