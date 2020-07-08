@@ -648,6 +648,13 @@ footer .links .right {
   }
 }
 footer .links .left ul li a,
+footer .links .center ul li a,
+footer .links .right ul li a {
+  color: #6e774a;
+  line-height: 40px;
+  cursor: pointer;
+}
+footer .links .left ul li a,
 footer .links .right ul li a {
   color: #6e774a;
   line-height: 40px;
@@ -660,6 +667,14 @@ footer .links .right ul li a:hover {
 }
 footer .links .center {
   position: relative;
+}
+footer .links .center ul li a {
+  color: #6e774a;
+  line-height: 40px;
+  cursor: pointer;
+}
+footer .links .center ul li a:hover {
+  text-shadow: 0 0 3px #333;
 }
 footer .links .center::before {
   content: '';
@@ -677,9 +692,6 @@ footer .links .center::before {
 footer .links .center ul li {
   display: inline-block;
   font-size: 25px;
-}
-footer .links .center ul li:hover {
-  text-shadow: 0 0 3px #333;
 }
 footer .links .center ul li:nth-child(2) {
   margin: 0 40px;

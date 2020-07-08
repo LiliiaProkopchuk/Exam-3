@@ -956,7 +956,15 @@ footer{
                width: 100%;
                margin-bottom: 20px;
             }
-
+            ul{
+                li{
+                    a{
+                        color: @color_text_3;
+                        line-height: 40px;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
         .left, .right{
             ul{
@@ -975,6 +983,18 @@ footer{
         }
         .center{
             position: relative;
+            ul{
+                li{
+                    a{
+                        color: @color_text_3;
+                        line-height: 40px;
+                        cursor: pointer;
+                        &:hover{
+                            text-shadow: 0 0 3px #333;
+                        }
+                    }
+                }
+            }
             &::before{
                 content: '';
                 position: absolute;
@@ -990,9 +1010,6 @@ footer{
                 li{
                     display: inline-block;
                     font-size: 25px;
-                    &:hover{
-                        text-shadow: 0 0 3px #333;
-                    }
                     &:nth-child(2){
                         margin: 0 40px;
                     }
