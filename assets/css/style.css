@@ -1,4 +1,3 @@
-
 main .about .container {
   width: 50%;
 }
@@ -649,22 +648,18 @@ footer .links .right {
   }
 }
 footer .links .left ul li a,
-footer .links .center ul li a,
 footer .links .right ul li a {
   color: #6e774a;
   line-height: 40px;
   cursor: pointer;
 }
-footer .links .left:hover,
-footer .links :right:hover {
+footer .links .left ul li a:hover,
+footer .links .right ul li a:hover {
   font-weight: 500;
   font-size: 20px;
 }
 footer .links .center {
   position: relative;
-}
-footer .links .center:hover {
-  text-shadow: 0 0 3px #333;
 }
 footer .links .center::before {
   content: '';
@@ -682,6 +677,9 @@ footer .links .center::before {
 footer .links .center ul li {
   display: inline-block;
   font-size: 25px;
+}
+footer .links .center ul li:hover {
+  text-shadow: 0 0 3px #333;
 }
 footer .links .center ul li:nth-child(2) {
   margin: 0 40px;
