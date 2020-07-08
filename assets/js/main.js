@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 //   AJAX + Slider Products
 $.ajax({
-    url: '../../data/products_list.json',
+    url: '../data/products_list.json',
     type: 'get',
     dataType: 'json',
     success: function (products_list) {
