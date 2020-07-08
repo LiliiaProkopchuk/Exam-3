@@ -1,17 +1,4 @@
-.br-theme-css-stars {
-  padding-top: 31px;
-  border: none;
-  width: 100px;
-  margin: 0 auto;
-}
-.br-theme-css-stars .br-widget a.br-active:after,
-.br-theme-css-stars .br-widget a.br-selected:after {
-  color: #6e774a;
-}
-.br-widget {
-  border: none;
-  width: 120px;
-}
+
 main .about .container {
   width: 50%;
 }
@@ -69,6 +56,7 @@ main .about .container .tabs_list {
 }
 main .about .container .tabs_list li {
   display: inline-block;
+  margin-bottom: -2px;
 }
 @media screen and (max-width: 370px) {
   main .about .container .tabs_list li {
@@ -667,8 +655,16 @@ footer .links .right ul li a {
   line-height: 40px;
   cursor: pointer;
 }
+footer .links .left:hover,
+footer .links :right:hover {
+  font-weight: 500;
+  font-size: 20px;
+}
 footer .links .center {
   position: relative;
+}
+footer .links .center:hover {
+  text-shadow: 0 0 3px #333;
 }
 footer .links .center::before {
   content: '';

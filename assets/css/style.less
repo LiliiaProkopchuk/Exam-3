@@ -438,6 +438,7 @@ main{
                 border-bottom: 2px solid @color_green;
                 li{
                     display: inline-block;
+                    margin-bottom: -2px;
                     @media screen and(max-width:370px){
                         width: 30%;
                         vertical-align: middle;
@@ -965,8 +966,17 @@ footer{
                 }
             }
         }
+        .left, :right{
+            &:hover{
+                font-weight: 500;
+                font-size: 20px;
+            }
+        }
         .center{
             position: relative;
+            &:hover{
+                text-shadow: 0 0 3px #333;
+            }
             &::before{
                 content: '';
                 position: absolute;
