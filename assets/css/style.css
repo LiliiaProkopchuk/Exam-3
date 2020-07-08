@@ -1,4 +1,17 @@
-
+.br-theme-css-stars {
+  padding-top: 31px;
+  border: none;
+  width: 100px;
+  margin: 0 auto;
+}
+.br-theme-css-stars .br-widget a.br-active:after,
+.br-theme-css-stars .br-widget a.br-selected:after {
+  color: #6e774a;
+}
+.br-widget {
+  border: none;
+  width: 120px;
+}
 main .about .container {
   width: 50%;
 }
